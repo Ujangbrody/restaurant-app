@@ -19,6 +19,34 @@ body {
 }
 
 /* 
+  skip content
+ */
+
+ .skip-to-content {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.skip-to-content:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 1rem;
+  overflow: visible;
+  clip: auto;
+  background-color: #000;
+  color: #fff;
+  z-index: 1000; /* memastikan berada di atas elemen lainnya */
+}
+
+/* 
 Nav 
 */
 
