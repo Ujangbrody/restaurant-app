@@ -16,6 +16,7 @@ const Detail = {
     const { restaurant } = response;
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    console.log(restaurant.customerReviews);
   },
 };
 

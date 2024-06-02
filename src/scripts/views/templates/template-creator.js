@@ -1,4 +1,12 @@
-import CONFIG from "../../globals/config";
+import CONFIG from '../../globals/config';
+
+const createCustomerReviewTemplate = (review) => `
+  <div class="customer-review">
+    <h3>${review.name}</h3>
+    <p>${review.review}</p>
+    <small>${review.date}</small>
+  </div>
+`;
 
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant__name">${restaurant.name}</h2>
@@ -12,6 +20,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
   <div class="restaurant__description">
     <h3>Description</h3>
     <p>${restaurant.description}</p>
+  </div>
+  <div class="restaurant__reviews">
+    <h3>Customer Reviews</h3>
+    ${restaurant.customerReviews.map(createCustomerReviewTemplate).join('')}
   </div>
   `;
 
@@ -43,8 +55,9 @@ const createLikedButtonTemplate = () => `
 `;
 
 export {
-    createRestaurantItemTemplate,
-    createRestaurantDetailTemplate,
-    createLikeButtonTemplate,
-    createLikedButtonTemplate
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
+  createCustomerReviewTemplate,
 };

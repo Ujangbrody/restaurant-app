@@ -5,7 +5,7 @@ const CacheHelper = {
   },
 
   async deleteOldCache() {
-    const cachesName = await caches.keys();
+    const cachesNames = await caches.keys();
     cachesNames
       .filter((name) => name !== 'Restaurant\'s-V1')
       .map((filteredName) => caches.delete(filteredName));
